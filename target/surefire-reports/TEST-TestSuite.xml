@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="TestSuite" time="129.806" errors="0" skipped="0">
+<testsuite tests="4" failures="1" name="TestSuite" time="146.602" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.6+10-LTS"/>
@@ -43,7 +43,7 @@
     <property name="java.class.path" value="C:\Program Files\Maven\apache-maven-3.6.1\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk17.0.6_10"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,7 +62,37 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="test.AddCustomerTest" name="userShouldBeAbleToAddCustomer" time="116.07"/>
-  <testcase classname="test.LoginTest" name="validUserShouldBeAbleToLogin" time="11.057"/>
-  <testcase classname="test.LoginTest" name="validateLoginAlertMsg" time="2.679"/>
+  <testcase classname="test.AddCustomerTest" name="userShouldBeAbleToAddCustomer" time="128.187"/>
+  <testcase classname="test.LoginTest" name="validUserShouldBeAbleToLogin" time="8.782">
+    <skipped/>
+    <system-err>Starting ChromeDriver 119.0.6045.105 (38c72552c5e15ba9b3117c0967a0fd105072d7c6-refs/branch-heads/6045@{#1103}) on port 24781
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1707415258.985][WARNING]: This version of ChromeDriver has not been tested with Chrome version 120.
+Feb 08, 2024 12:00:59 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</system-err>
+  </testcase>
+  <testcase classname="test.LoginTest" name="validUserShouldBeAbleToLogin" time="9.465">
+    <failure message="Dashboard Page is not available! expected [valid] but found [Dashboard]" type="java.lang.AssertionError">java.lang.AssertionError: Dashboard Page is not available! expected [valid] but found [Dashboard]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at page.BasePage.validateElement(BasePage.java:29)
+	at page.DashboardPage.validateDashboardPage(DashboardPage.java:23)
+	at test.LoginTest.validUserShouldBeAbleToLogin(LoginTest.java:42)
+</failure>
+    <system-err>Starting ChromeDriver 119.0.6045.105 (38c72552c5e15ba9b3117c0967a0fd105072d7c6-refs/branch-heads/6045@{#1103}) on port 10360
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1707415270.268][WARNING]: This version of ChromeDriver has not been tested with Chrome version 120.
+Feb 08, 2024 12:01:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</system-err>
+  </testcase>
+  <testcase classname="test.LoginTest" name="validateLoginAlertMsg" time="0.168"/>
 </testsuite>

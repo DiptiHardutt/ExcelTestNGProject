@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -17,12 +20,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import page.LoginPage;
 
 
 public class MyBaseTest  {
 	public WebDriver driver;
 	LoginPage loginPage;
+	static Properties prop;
 	static String browser;
 	static String environment;
 	
@@ -30,7 +37,7 @@ public class MyBaseTest  {
 	// Buffered Reader /Input Stream /File Reader /Scanner
 	public static void readConfig() {
 		try {
-			Properties prop = new Properties();
+			prop = new Properties();
 			InputStream fi = new FileInputStream("src\\main\\java\\config\\config.properties");
 			prop.load(fi);
 			browser = prop.getProperty("browser");
@@ -43,13 +50,14 @@ public class MyBaseTest  {
 	
 	public  WebDriver init() {
 		readConfig();
-		if(browser.equalsIgnoreCase("chrome")) {
+		String nameBrowser=System.getProperty("browser")!= null?System.getProperty("browser"):prop.getProperty("browser");
+		if(nameBrowser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
-		}else if(browser.equalsIgnoreCase("edge")) {
+		}else if(nameBrowser.equalsIgnoreCase("edge")) {
 			System.setProperty("webdriver.edge.driver", "drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
-		}else if(browser.equalsIgnoreCase("firefox")) {
+		}else if(nameBrowser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}else {
@@ -95,6 +103,26 @@ public class MyBaseTest  {
 		}
 		//return the path where screenshot is saved
 		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
+	}
+	
+	
+	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException{
+		
+			//reading json to String
+		String json = FileUtils.readFileToString(new File(filePath),
+				StandardCharsets.UTF_8);
+		
+		//convert string to HashMap using jackson databind
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<HashMap<String,String>> data=	
+			mapper.readValue(json, new TypeReference<List<HashMap<String,String>>>(){
+				
+			});
+		
+		
+			return data;
+		
 	}
 	
 	

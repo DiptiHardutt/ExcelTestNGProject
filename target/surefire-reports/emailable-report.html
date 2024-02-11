@@ -9,12 +9,23 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">129,839</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">2</td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">158,387</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.AddCustomerTest</td><td><a href="#m0">userShouldBeAbleToAddCustomer</a></td><td rowspan="1">1706400092075</td><td rowspan="1">116068</td></tr><tr class="passedodd"><td rowspan="2">test.LoginTest</td><td><a href="#m1">validUserShouldBeAbleToLogin</a></td><td rowspan="1">1706400208149</td><td rowspan="1">11058</td></tr><tr class="passedodd"><td><a href="#m2">validateLoginAlertMsg</a></td><td rowspan="1">1706400219207</td><td rowspan="1">2679</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">test.LoginTest</td><td><a href="#m0">validUserShouldBeAbleToLogin</a></td><td rowspan="1">1707415272398</td><td rowspan="1">9454</td></tr><tr><th colspan="4">Command line test &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">test.LoginTest</td><td><a href="#m1">validUserShouldBeAbleToLogin</a></td><td rowspan="1">1707415260768</td><td rowspan="1">8783</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.AddCustomerTest</td><td><a href="#m2">userShouldBeAbleToAddCustomer</a></td><td rowspan="1">1707415129914</td><td rowspan="1">128185</td></tr><tr class="passedodd"><td rowspan="1">test.LoginTest</td><td><a href="#m3">validateLoginAlertMsg</a></td><td rowspan="1">1707415284316</td><td rowspan="1">168</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">test.AddCustomerTest#userShouldBeAbleToAddCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">test.LoginTest#validUserShouldBeAbleToLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">test.LoginTest#validateLoginAlertMsg</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Command line test</h2><h3 id="m0">test.LoginTest#validUserShouldBeAbleToLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Dashboard Page is not available! expected [valid] but found [Dashboard]
+	at page.BasePage.validateElement(BasePage.java:29)
+	at page.DashboardPage.validateDashboardPage(DashboardPage.java:23)
+	at test.LoginTest.validUserShouldBeAbleToLogin(LoginTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 42 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">test.LoginTest#validUserShouldBeAbleToLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Dashboard Page is not available! expected [valid] but found [Dashboard]
+	at page.BasePage.validateElement(BasePage.java:29)
+	at page.DashboardPage.validateDashboardPage(DashboardPage.java:23)
+	at test.LoginTest.validUserShouldBeAbleToLogin(LoginTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 42 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">test.AddCustomerTest#userShouldBeAbleToAddCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">test.LoginTest#validateLoginAlertMsg</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

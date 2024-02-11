@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 130.577 sec
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 159.431 sec <<< FAILURE!
+validUserShouldBeAbleToLogin(test.LoginTest)  Time elapsed: 9.465 sec  <<< FAILURE!
+java.lang.AssertionError: Dashboard Page is not available! expected [valid] but found [Dashboard]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at page.BasePage.validateElement(BasePage.java:29)
+	at page.DashboardPage.validateDashboardPage(DashboardPage.java:23)
+	at test.LoginTest.validUserShouldBeAbleToLogin(LoginTest.java:42)
+

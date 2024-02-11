@@ -1,12 +1,12 @@
 package test;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import page.DashboardPage;
 import page.LoginPage;
 import testComponents.MyBaseTest;
+import testComponents.Retry;
 import util.ExcelReader;
 
 public class LoginTest extends MyBaseTest{
@@ -22,7 +22,7 @@ public class LoginTest extends MyBaseTest{
 	String expAlertUserNameText = excelReader.getCellData("LoginInfo", "alertUserNameText", 2);
 	String expAlertPasswordText = excelReader.getCellData("LoginInfo", "alertPasswordText", 2);
 	
-	@Test
+	@Test(retryAnalyzer=Retry.class)
 	public void validUserShouldBeAbleToLogin() {
 		//we have to make init method static so we can call our method by class name directly
 		//and we have to return Webdriver in init method so we can transfer our driver here by following:-

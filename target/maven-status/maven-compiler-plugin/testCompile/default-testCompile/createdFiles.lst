@@ -1,2 +1,7 @@
-test\AddCustomerTest.class
 test\LoginTest.class
+testComponents\Listeners.class
+testComponents\Retry.class
+testComponents\MyBaseTest$1.class
+test\AddCustomerTest.class
+test\LoginTestWithJson.class
+testComponents\MyBaseTest.class

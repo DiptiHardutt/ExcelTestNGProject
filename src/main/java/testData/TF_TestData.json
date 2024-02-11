@@ -1,0 +1,25 @@
+[
+  
+			{
+				"UserName": "demo@codefios.com",
+				"Password" : "abc123",
+				"ValidationTextLogin" : "Dashboard",
+				"alertUserValidationText" : "Please enter your user name",
+				"alertPasswordValidationText" : "Please enter your password"
+			},
+			{
+				"UserName": "demo@codefios.com",
+				"Password" : "abc123",
+				"ValidationTextLogin" : "Dashboard",
+				"alertUserValidationText" : "Please enter your user name",
+				"alertPasswordValidationText" : "Please enter your password"
+			},
+			{
+				"UserName": "demo1@codefios.com",
+				"Password" : "abc1234",
+				"ValidationTextLogin" : "Dashboard",
+				"alertUserValidationText" : "Please enter your user name",
+				"alertPasswordValidationText" : "Please enter your password"
+			}
+	
+		]  
